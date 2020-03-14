@@ -1,0 +1,244 @@
+<!--<h1 class="headeralign">mars works!</h1>
+-->
+
+<mat-toolbar id="mainToolbar" color="primary">
+        <mat-icon
+          (click)="onToolbarMenuToggle()"
+          id="toolbarMenu">subject</mat-icon>
+        <p>Space App</p>
+        <span class="toolbar-spacer"></span>
+        <mat-icon
+          class="toolbar-icon"
+          matBadge="8"
+          matBadgePosition="after"
+          matBadgeColor="accent"
+        >notifications</mat-icon>
+      </mat-toolbar>
+      
+      <mat-sidenav-container 
+        id="sidenavContainer"
+       fullscreen>
+        <mat-sidenav
+          mode="side"
+          #sidenav
+          id="sidenav"
+          [class.menu-open]="isMenuOpen"
+          [class.menu-close]="!isMenuOpen"
+          opened>
+          
+          <mat-list  id="menus">
+            <mat-card >
+              <mat-card-header>
+                <div 
+                  mat-card-avatar 
+                  class="avatar"></div>
+      
+                <mat-card-title>Username</mat-card-title>
+                <mat-card-subtitle>User title</mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+            <mat-list-item >
+              <button 
+              routerLink=""
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>home</mat-icon>
+              Home</button>
+            </mat-list-item>
+      
+            <mat-list-item >
+              <button 
+              (click)="onChangeRouteNeo()"
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>track_changes</mat-icon>
+              Near Earth Orbit</button>
+            </mat-list-item>
+      
+            <mat-list-item>
+                <button
+                
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>language</mat-icon>
+                Mars</button>
+              </mat-list-item>
+      
+              <mat-list-item>
+                  <button 
+                  class="menu-item"
+                    mat-flat-button>
+                    <mat-icon>settings_application</mat-icon>
+                  Settings</button>
+                </mat-list-item>
+      
+          </mat-list>
+        </mat-sidenav>
+        <div>
+          <h1>Curiosity Images</h1>
+          <h3>Photos taken: {{myDate}}</h3>
+          <h2>Select a date to view more photos</h2>
+          <div class="right">
+            <mat-form-field>
+              <input matInput [min]="minDate" [max]="maxDate" 
+              placeholder="Select Date" 
+              [matDatepicker]="datepickerRef" name="datepicker" ngModel 
+              #dateCtrl="ngModel" required readonly
+              [(ngModel)] = 'startDate'
+              (dateChange) ="onDateSelected()"/>
+              <mat-datepicker-toggle [for]="datepickerRef" matSuffix></mat-datepicker-toggle>
+              <mat-datepicker #datepickerRef></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div *ngIf="curiosityModel.photos.length === 0">
+            <h4>There are no images uploaded on this date.</h4>
+          </div>
+          <div *ngIf="curiosityModel.photos.length > 0">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Front Hazard Avoidance Camera
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'FHAZ'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Rear Hazard Avoidance Camera
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'RHAZ'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Mast Camera
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'MAST'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Chemistry and Camera Complex
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'CHEMCAM'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Mars Hand Lens Imager
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'MAHLI'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Mars Descent Imager
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'MARDI'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Navigation Camera
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'NAVCAM'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Panoramic Camera
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'PANCAM'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Miniature Thermal Emission Spectrometer
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let photo of curiosityModel.photos">
+                <div *ngIf="photo.camera.name === 'MINITES'">
+                  <img src='{{photo.img_src}}'>
+                </div>
+              </div>        
+            </mat-expansion-panel>
+
+
+
+            
+          </div>
+        </div>
+        <!--
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker"  placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <mat-table [dataSource]="curiosityModel.photos" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.camera.full_name}} </mat-cell>
+            </ng-container>
+          
+        
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+              <mat-cell *matCellDef="let element"> <img src={{element.img_src}}> </mat-cell>
+            </ng-container>
+          
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        -->
+      </mat-sidenav-container>

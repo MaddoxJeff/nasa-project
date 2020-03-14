@@ -1,0 +1,76 @@
+h1.headeralign{
+    position: fixed;
+    right: 40%;
+    bottom: 50%;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.portrait {
+    height: 80px;
+    width: 30px;
+}
+
+.landscape {
+    height: 30px;
+    width: 80px;
+}
+
+.square {
+    height: 75px;
+    width: 75px;
+}
+h1{
+    text-align:center;
+  
+}
+button {
+    align-content: center;
+}
+
+.background-blue-neutral{
+    background-color: #1E2B3E;
+    h1 {
+        color: #4783B6
+    }
+    h2 {
+        color: #6194BF
+    }
+    h3 {
+        color: #7EA1BF
+    }
+    h4{
+        color: #99B1C6
+    }
+    h5{
+        color: #C2D3E2
+    }
+    h6 {
+        color: #DEE6ED
+    }
+    
+}
+
+.background-green-neutral {
+    background-color: #36563B;
+    h1 {
+        color: #43D155
+    }
+    h2 {
+        color: #67D575
+    }
+    h3 {
+        color: #85C390
+    }
+    h4{
+        color: #AAE1B4
+    }
+    h5{
+        color: #C4E2C9
+    }
+    h6 {
+        color: #E7F7E9
+    }
+}
