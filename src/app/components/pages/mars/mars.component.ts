@@ -95,6 +95,12 @@ export class MarsComponent implements OnInit {
     this.router.navigate(['../neo']);
   }
 
+  onChangeRouteAbout() {
+    //console.log(this.activatedRoute.pathFromRoot.concat());
+    //console.log(this.router.url);
+    this.router.navigate(['../about']);
+  }
+
   onDateSelected() {
     this.subscriptions.add(
       this.marsservice.GetCuriosityPhotosByDate(this.formatDate(this.startDate)).subscribe((curiosityModel: CuriosityModel) => {

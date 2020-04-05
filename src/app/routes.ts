@@ -3,6 +3,7 @@ import { HomeComponent } from '../app/components/pages/home/home.component';
 import { MarsComponent } from '../app/components/pages/mars/mars.component';
 import { NeoComponent} from '../app/components/pages/neo/neo.component';
 import { SandboxComponent } from '../app/components/pages/sandbox/sandbox.component';
+import { AboutComponent } from '../app/components/pages/about/about.component'
 //mport { D3DisplayNeo } from '../app/components/pages/neo/d3_display_neo/display-neo.component';
 import { AuthGuardService } from './services/guards/authguard.service';
 
@@ -11,6 +12,7 @@ export const AppRoutes: Routes = [
     { path: 'mars', component: MarsComponent },
     { path: 'neo', component: NeoComponent },
     { path: 'sandbox', component: SandboxComponent },
+    { path: 'about', component: AboutComponent },
     //{ path: '', loadChildren: () => import('./components/pages/home/home.module').then(m => m.homeModule), canActivate: [AuthGuardService]},
     //{ path: 'mars', loadChildren: () => import('./components/pages/mars/mars.module').then(m => m.marsModule), canActivate: [AuthGuardService]},
     //{ path: '', loadChildren: () => import('./components/pages/home/home.module').then(m => m.homeModule)},

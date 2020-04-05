@@ -22,9 +22,14 @@ img {
     height: 75px;
     width: 75px;
 }
-h1{
-    text-align:center;
-  
+h1 {
+    text-align:center; 
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 button {
     align-content: center;

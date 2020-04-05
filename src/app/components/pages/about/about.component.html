@@ -51,19 +51,19 @@
             <mat-icon>language</mat-icon>
           Mars</button>
         </mat-list-item>
-  
+  <!--
         <mat-list-item>
           <button 
+          routerLink="neo"
+          (click)="onChangeRouteNeo()"
           class="menu-item"
             mat-flat-button>
             <mat-icon>track_changes</mat-icon>
           Near Earth Orbit</button>
         </mat-list-item>
-  
+      -->
           <mat-list-item>
               <button 
-              routerLink="about"
-              (click)="onChangeRouteAbout()"
               class="menu-item"
                 mat-flat-button>
                 <mat-icon>supervisor_account</mat-icon>
@@ -75,8 +75,9 @@
 
 
     <div class="container">
-      <h1>Coming soon</h1>
-      <h3>This module is designed to show near earth Asteroid information.
+      <h1>About</h1>
+      <h3>This app was created to give a visual representation of the Nasa open API's.  From Mars rover images, all way to tracking 
+        objects approaching our planet.
       </h3>
 
     </div>

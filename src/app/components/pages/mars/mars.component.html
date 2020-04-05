@@ -9,7 +9,6 @@
         <span class="toolbar-spacer"></span>
         <mat-icon
           class="toolbar-icon"
-          matBadge="8"
           matBadgePosition="after"
           matBadgeColor="accent"
         >notifications</mat-icon>
@@ -45,7 +44,15 @@
                 <mat-icon>home</mat-icon>
               Home</button>
             </mat-list-item>
-      
+
+            <mat-list-item>
+              <button             
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>language</mat-icon>
+              Mars</button>
+            </mat-list-item>
+      <!--
             <mat-list-item >
               <button 
               (click)="onChangeRouteNeo()"
@@ -54,50 +61,49 @@
                 <mat-icon>track_changes</mat-icon>
               Near Earth Orbit</button>
             </mat-list-item>
-      
-            <mat-list-item>
-                <button
-                
+          -->
+              <mat-list-item>
+                <button 
+                routerLink="about"
+                (click)="onChangeRouteAbout()"
                 class="menu-item"
                   mat-flat-button>
-                  <mat-icon>language</mat-icon>
-                Mars</button>
+                  <mat-icon>supervisor_account</mat-icon>
+                About</button>
               </mat-list-item>
-      
-              <mat-list-item>
-                  <button 
-                  class="menu-item"
-                    mat-flat-button>
-                    <mat-icon>settings_application</mat-icon>
-                  Settings</button>
-                </mat-list-item>
       
           </mat-list>
         </mat-sidenav>
-        <div>
-          <h1>Curiosity Images</h1>
-          <h3>Photos taken: {{myDate}}</h3>
-          <h2>Select a date to view more photos</h2>
-          <div class="right">
-            <mat-form-field>
-              <input matInput [min]="minDate" [max]="maxDate" 
-              placeholder="Select Date" 
-              [matDatepicker]="datepickerRef" name="datepicker" ngModel 
-              #dateCtrl="ngModel" required readonly
-              [(ngModel)] = 'startDate'
-              (dateChange) ="onDateSelected()"/>
-              <mat-datepicker-toggle [for]="datepickerRef" matSuffix></mat-datepicker-toggle>
-              <mat-datepicker #datepickerRef></mat-datepicker>
-            </mat-form-field>
+        <div class="container">
+          <h1>Rover Images</h1>
+          <div class="container-header">
+
+            <h3>Photos taken: {{myDate}}</h3>
+            <h2>Select a date to view more photos</h2>
+            <div class="right">
+              <mat-form-field>
+                <input matInput [min]="minDate" [max]="maxDate" 
+                placeholder="Select Date" 
+                [matDatepicker]="datepickerRef" name="datepicker" ngModel 
+                #dateCtrl="ngModel" required readonly
+                [(ngModel)] = 'startDate'
+                (dateChange) ="onDateSelected()"/>
+                <mat-datepicker-toggle [for]="datepickerRef" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #datepickerRef></mat-datepicker>
+              </mat-form-field>
+            </div>
           </div>
+
+          
+
 
           <div *ngIf="curiosityModel.photos.length === 0">
             <h4>There are no images uploaded on this date.</h4>
           </div>
           <div *ngIf="curiosityModel.photos.length > 0">
-            <mat-expansion-panel>
+            <mat-expansion-panel >
               <mat-expansion-panel-header>
-                <mat-panel-title>
+                <mat-panel-title >
                   Front Hazard Avoidance Camera
                 </mat-panel-title>
               </mat-expansion-panel-header>

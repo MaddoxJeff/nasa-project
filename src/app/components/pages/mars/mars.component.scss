@@ -109,3 +109,44 @@ h4{
 .sidenav-color {
     background-color: #7F8486;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+        margin: 1px;
+    }
+    h2 {
+        margin: 1px;
+    }
+}
+.container-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    h3 {
+        margin: 1px;
+    }
+    h2 {
+        margin: 1px;
+    }
+}
+.container-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    h3 {
+        margin: 1px;
+    }
+    h2 {
+        margin: 1px;
+    }
+}
+
+.center-aligned-header {
+    justify-content: center;
+}

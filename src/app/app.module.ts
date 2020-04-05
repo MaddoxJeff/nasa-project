@@ -38,6 +38,7 @@ import { pictureADayService } from './services/apis/pictureADay.service';
 import { nearEarthOrbitService } from './services/apis/neo.service';
 import { NeoComponent } from './components/pages/neo/neo.component';
 import { SandboxComponent } from './components/pages/sandbox/sandbox.component';
+import { AboutComponent } from './components/pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,9 @@ import { SandboxComponent } from './components/pages/sandbox/sandbox.component';
     // Routes
     //routingComponents,
     SidenavComponent,
+
+
+    AboutComponent,
 
 
   ],

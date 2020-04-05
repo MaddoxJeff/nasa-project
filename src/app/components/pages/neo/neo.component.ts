@@ -97,6 +97,12 @@ export class NeoComponent implements OnInit {
     this.router.navigate(['../mars']);
   }
 
+  onChangeRouteAbout() {
+    //console.log(this.activatedRoute.pathFromRoot.concat());
+    //console.log(this.router.url);
+    this.router.navigate(['../about']);
+  }
+
   
   
 
